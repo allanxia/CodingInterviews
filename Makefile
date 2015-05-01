@@ -1,6 +1,6 @@
 
 
-all:printMatrixClockWise binaryTreeMirror
+all:printMatrixClockWise binaryTreeMirror getGreatestOfSubArray getGreatestOfStack
 .PHONY:all
 
 #二叉树的镜像
@@ -19,6 +19,17 @@ printMatrixClockWise.o:printMatrixClockWise.c util.h
 util.o:util.c util.h
 	g++ -c util.c
 
+#连续子数组的最大和问题
+getGreatestOfSubArray:getGreatestSumOfSubArray.o util.o
+	g++ -o getGreatestOfSubArray getGreatestSumOfSubArray.o util.o
+getGreatestSumOfSubArray.o:greatestSumOfSubArray.c util.h
+	g++  -c greatestSumOfSubArray.c -o getGreatestSumOfSubArray.o 
+ 
+#连续子数组的最大和的应用，股票交易问题
+getGreatestOfStack:greatestSubOfArray.o util.o
+	g++ -o getGreatestOfStack greatestSubofArray.o util.o
+greatestSubOfArray.o:greatestSubOfArray.c util.h
+	g++ -c greatestSubOfArray.c
 
 .PHONY:clean
 clean:
