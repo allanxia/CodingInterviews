@@ -1,6 +1,7 @@
 
 
-all:printMatrixClockWise binaryTreeMirror getGreatestOfSubArray getGreatestOfStack
+all:printMatrixClockWise binaryTreeMirror getGreatestOfSubArray getGreatestOfStack \
+		minStack strPermutation 
 .PHONY:all
 
 #二叉树的镜像
@@ -30,6 +31,20 @@ getGreatestOfStack:greatestSubOfArray.o util.o
 	g++ -o getGreatestOfStack greatestSubofArray.o util.o
 greatestSubOfArray.o:greatestSubOfArray.c util.h
 	g++ -c greatestSubOfArray.c
+
+#包含min函数的栈
+minStack:minStack.o
+	g++ -o minStack minStack.o
+minStack.o:minStack.c util.h
+	g++ -c minStack.c
+
+#字符串排列问题
+strPermutation:strPermutation.o
+	g++ -o strPermutation strPermutation.o
+strPermutation.o:strPermutation.c util.h
+	g++ -c strPermutation.c
+
+
 
 .PHONY:clean
 clean:

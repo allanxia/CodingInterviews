@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <stack>
+#include <queue>
 
 //´òÓ¡Êý×é
 template<class T>
