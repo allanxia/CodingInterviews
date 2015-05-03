@@ -48,6 +48,6 @@ strPermutation.o:strPermutation.c util.h
 
 .PHONY:clean
 clean:
-	del *.o *~
+	del *.o *~ *.swp
 cleanAll:
-	del *.o *~ *.exe
+	del *.o *~ *.exe *.swp
