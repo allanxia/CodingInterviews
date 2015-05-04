@@ -1,7 +1,7 @@
 
 
 all:printMatrixClockWise binaryTreeMirror getGreatestOfSubArray getGreatestOfStack \
-		minStack strPermutation 
+		minStack strPermutation  judgeCube strPermutationRepeat
 .PHONY:all
 
 #二叉树的镜像
@@ -38,11 +38,23 @@ minStack:minStack.o
 minStack.o:minStack.c util.h
 	g++ -c minStack.c
 
-#字符串排列问题
+#字符串排列问题，1重复字符
 strPermutation:strPermutation.o
 	g++ -o strPermutation strPermutation.o
-strPermutation.o:strPermutation.c util.h
-	g++ -c strPermutation.c
+strPermutation.o:strPermutationNoRepeat.c util.h
+	g++ -c strPermutationNoRepeat.c
+
+#字符串排列问题的应用，正方体对应面顶点和相同，八皇后问题
+judgeCube:judgeCube.o
+	g++ -o judgeCube judgeCube.o 
+judgeCube.o:judgeCube.c util.h
+	g++ -c judgeCube.c
+
+#字符串排列问题，字符串中有重复字符
+strPermutationRepeat:strPermutationRepeat.o
+	g++ -o strPermutationRepeat strPermutationRepeat.o
+strPermutationRepeat.o:strPermutationRepeat.c util.h
+	g++ -c strPermutationRepeat.c
 
 
 
